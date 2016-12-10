@@ -10,6 +10,15 @@ public class Record {
     private Integer liked;
     private String profileBackground;
     private Repost repost;
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public Repost getRepost() {
         return repost;
