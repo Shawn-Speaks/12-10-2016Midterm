@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -52,6 +53,15 @@ public class Adapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         Record record = records.get(position);
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_Layout);
+//        linearLayout.setBackgroundColor(Color.parseColor(record.getProfileBackground()));
+
+        /**
+         *
+         *  CODE ABOVE SHOULD WORK BUT DOES NOT!
+         *
+         */
+
         ((VineViewHolder) holder).bind(record);
     }
 
@@ -64,15 +74,18 @@ public class Adapter extends RecyclerView.Adapter {
     public class VineViewHolder extends RecyclerView.ViewHolder {
         TextView usernameTV;
         TextView likedTV;
+        LinearLayout linearLayout;
 
 
         public void bind(Record record){
             usernameTV.setText(record.getUsername());
             likedTV.setText(String.valueOf(record.getLiked()));
+//            ContextCompat.getColor(this, R.color.white);
         }
 
         public VineViewHolder(View itemView) {
             super(itemView);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.linear_Layout);
             usernameTV = (TextView) itemView.findViewById(R.id.name_TV);
             likedTV = (TextView) itemView.findViewById(R.id.liked_TV);
             /**
