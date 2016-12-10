@@ -10,5 +10,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="shawn.c4q.nyc.midterm.MainActivity">
 
-   
+
 </RelativeLayout>
